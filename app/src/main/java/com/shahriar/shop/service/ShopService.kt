@@ -31,7 +31,7 @@ interface ShopService {
     @GET("products/category/{categoryName}")
     suspend fun getProductsByCategory(
         @Path(value = "categoryName") categoryName: String?,
-    ): Product
+    ): ProductsResponse
 
 
     @POST("products")

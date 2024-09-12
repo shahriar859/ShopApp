@@ -20,8 +20,10 @@
         app:menu="@menu/bottom_nav_menu"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#F5F8FB"
-        app:itemRippleColor="@color/primary"
-        app:labelVisibilityMode="unlabeled" />
+        android:background="#b7f3ff"
+        app:itemRippleColor="#71E1F0"
+        app:labelVisibilityMode="unlabeled"
+        android:outlineAmbientShadowColor="@color/primary"
+        android:outlineSpotShadowColor="@color/primary"/>
 
 </LinearLayout>

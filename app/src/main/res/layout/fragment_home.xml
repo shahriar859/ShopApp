@@ -1,53 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#673AB7"
+    android:background="@drawable/shophome"
     android:orientation="vertical"
-    android:paddingHorizontal="8dp"
     android:paddingTop="8dp"
     tools:context=".ui.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:paddingLeft="16dp"
         >
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/userImage"
-            android:layout_height="50dp"
             android:layout_width="50dp"
+            android:layout_height="50dp"
             android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/Circular"
             android:src="@drawable/profile"
-            />
+            app:shapeAppearanceOverlay="@style/Circular" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp">
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Shahriar Mamun"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Premium"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                />
+                android:textSize="12sp" />
 
         </LinearLayout>
 
@@ -55,8 +53,8 @@
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            app:cardCornerRadius="20dp"
-            android:layout_marginLeft="145dp">
+            android:layout_marginLeft="110dp"
+            app:cardCornerRadius="20dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -66,11 +64,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/ic_orders"/>
+                    android:src="@drawable/ic_orders" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="02"/>
+                    android:text="02" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -78,32 +77,45 @@
     </LinearLayout>
 
     <TextView
-        android:text="Shop"
-        android:textSize="32sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="5dp"
-        android:textColor="@color/black"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp"
+        android:text="The Ultimate\nCollection"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="Step into style"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="normal" />
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:orientation="horizontal" />
 
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_centerInParent="true"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:backgroundTint="@color/white"/>
+            android:layout_centerInParent="true"
+            android:backgroundTint="@color/white" />
 
     </RelativeLayout>
 

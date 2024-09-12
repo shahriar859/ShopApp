@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.android.material.carousel.CarouselLayoutManager
 import com.shahriar.shop.R
 import com.shahriar.shop.data.products.Product
 import kotlinx.coroutines.launch
@@ -54,9 +55,11 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         recyclerView = view.findViewById(R.id.recyclerView)
+        recyclerView.setLayoutManager(CarouselLayoutManager())
         progressBar = view.findViewById(R.id.progressBar)
-        recyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
+        //recyclerView.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         recyclerView.addItemDecoration(ItemSpacingDecoration(horizontal = 4, vertical = 16))
+        recyclerView.setPadding(0, 0, 0, 0)
 
         handleLoading()
 

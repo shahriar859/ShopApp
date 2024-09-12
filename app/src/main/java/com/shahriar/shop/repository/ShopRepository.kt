@@ -2,6 +2,7 @@ package com.shahriar.shop.repository
 
 import android.util.Log
 import com.shahriar.shop.api.Resource
+import com.shahriar.shop.data.products.Product
 import com.shahriar.shop.data.products.ProductsResponse
 import com.shahriar.shop.service.ShopService
 import kotlinx.coroutines.Dispatchers
@@ -28,6 +29,34 @@ class ShopRepository(private val api: ShopService) {
         }
     }.flowOn(Dispatchers.IO)
 
+    suspend fun getAllCategories(
+    ): Flow<Resource<Product>> = flow {
+        try {
+            emit(Resource.Loading) // Emit loading state
+            val response = api.getAllCategories()// Make the network request
+            Log.d("Repository", response.toString())
 
+            emit(Resource.Success(response))
+        } catch (e: Exception) {
+            emit(Resource.Error(e.message ?: "Unknown Error")) // Emit error state
+        }
+    }.flowOn(Dispatchers.IO)
+
+
+    suspend fun getProductsByCategory(
+        categoryName: String?
+    ): Flow<Resource<ProductsResponse>> = flow {
+        try {
+            emit(Resource.Loading) // Emit loading state
+            val response = api.getProductsByCategory(
+                categoryName
+            ) // Make the network request
+            Log.d("Repository", response.toString())
+
+            emit(Resource.Success(response))
+        } catch (e: Exception) {
+            emit(Resource.Error(e.message ?: "Unknown Error")) // Emit error state
+        }
+    }.flowOn(Dispatchers.IO)
 
 }
